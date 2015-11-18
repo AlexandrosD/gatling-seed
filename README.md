@@ -1,0 +1,1 @@
+Seed project for quick setup of Gatling.io with Maven
