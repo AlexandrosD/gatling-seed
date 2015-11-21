@@ -11,6 +11,8 @@
         <gatling.version>2.1.7</gatling.version>
         <gatling-plugin.version>2.1.7</gatling-plugin.version>
         <scala-maven-plugin.version>3.2.2</scala-maven-plugin.version>
+
+        <app.baseUrl>https://www.gatling.google.com/</app.baseUrl>
     </properties>
 
     <dependencies>
@@ -39,24 +41,11 @@
                         <goals>
                             <goal>execute</goal>
                         </goals>
-                        <!--
                         <configuration>
-                            <configFolder>src/test/resources</configFolder>
-                            <dataFolder>src/test/resources/data</dataFolder>
-                            <resultsFolder>target/gatling/results</resultsFolder>
-                            <requestBodiesFolder>src/test/resources/request-bodies</requestBodiesFolder>
-                            <simulationsFolder>src/test/scala</simulationsFolder>
-                            <noReports>false</noReports>
-                            <reportsOnly>directoryName</reportsOnly>
-                            <simulationClass>foo.Bar</simulationClass>
                             <jvmArgs>
-                                <jvmArg>-DmyExtraParam=foo</jvmArg>
+                                <jvmArg>-Dapp.baseUrl=${app.baseUrl}</jvmArg>
                             </jvmArgs>
-                            <fork>true</fork>
-                            <propagateSystemProperties>true</propagateSystemProperties>
-                            <failOnError>true</failOnError>
                         </configuration>
-                        -->
                     </execution>
                 </executions>
             </plugin>
